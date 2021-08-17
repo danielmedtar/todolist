@@ -3,19 +3,91 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-size: 62.5%;
+}
 body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Lato', sans-serif;
+    background-color: #18206F;
 }
 
 h1 {
     margin-bottom: 30px;
+    text-align: center;
+    color: #BD1E1E;
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+main {
+    background-color: #fff;
+    padding: 60px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    form {
+        flex-direction: row;
+    }
+}
+#inputIngreso {
+    border: none;
+    border-bottom: 1px solid #D88373;
+    outline: none;
+    font-size: 1.6rem;
+    color: #BD1E1E;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    #inputIngreso {
+        font-size: 2.5rem;
+        margin-right: 20px;
+    }
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #BD1E1E;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    button {
+        font-size: 1.8rem;
+    }
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #BD1E1E;
+    padding: 10px;
+}
+li:nth-child(odd) {
+    background-color: #D88373;
 }
 .tareaTachada {
     text-decoration: line-through;
+    opacity: .5;
 }
 
 .dnone {

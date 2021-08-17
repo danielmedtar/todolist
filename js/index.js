@@ -1,5 +1,6 @@
 const botonAgregar = document.getElementById('agregar')
 const lista = document.getElementById('listaTareas')
+
     
 botonAgregar.addEventListener('click', function(event) {
     event.preventDefault()
