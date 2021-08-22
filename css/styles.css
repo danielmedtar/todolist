@@ -77,11 +77,18 @@ button {
     }
 }
 
+#listaTareas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    gap: 20px;
     font-size: 1.8rem;
     color: #BD1E1E;
     padding: 10px;
@@ -91,9 +98,12 @@ li:nth-child(odd) {
     background-color: #D88373;
 }
 
+p {
+    cursor: pointer;
+}
 .tareaTachada {
     text-decoration: line-through;
-    opacity: .5;
+    opacity: .3;
 }
 
 .dnone {

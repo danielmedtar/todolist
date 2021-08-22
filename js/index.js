@@ -1,32 +1,37 @@
 const botonAgregar = document.getElementById('agregar')
 const lista = document.getElementById('listaTareas')
-
+const inputIngreso = document.getElementById('inputIngreso')
+let contadorTareas = 0
     
 botonAgregar.addEventListener('click', function(event) {
     event.preventDefault()
-    let inputIngreso = document.getElementById('inputIngreso')
-
-    if (inputIngreso.value !== '') {
-        let li = document.createElement('li')
-        li.innerHTML = inputIngreso.value
-        let botonEliminar = document.createElement('button')
-        botonEliminar.className = 'eliminar'
-        botonEliminar.innerHTML = 'Eliminar'
-        
-        li.appendChild(botonEliminar)
-        lista.appendChild(li)
-        inputIngreso.value = ''
-
-        li.addEventListener('click', function() {
-            li.classList.toggle('tareaTachada')
-        })
     
-        botonEliminar.addEventListener('click', function() {
-            li.classList.add('dnone')
-        })
-    }
+    const tareaIngresada = inputIngreso.value
 
-   
+    if(tareaIngresada.length >= 1) {
+        let li = document.createElement('li')
+        li.innerHTML = `
+            <p id="tarea${contadorTareas}">${tareaIngresada}</p>
+            <button id="eliminar${contadorTareas}">Eliminar</button>
+        `
+        lista.appendChild(li)
+    }
+        
+    inputIngreso.value = ''
+
+    let parrafoItem = document.getElementById(`tarea${contadorTareas}`)
+
+    parrafoItem.addEventListener('click', function() {
+        parrafoItem.classList.toggle('tareaTachada')
+    })
+        
+    let botonEliminar = document.getElementById(`eliminar${contadorTareas}`)
+        
+    botonEliminar.addEventListener('click', function() {
+        botonEliminar.parentElement.remove()
+    })
+
+    contadorTareas++    
 })
 
 
